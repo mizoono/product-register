@@ -1,5 +1,6 @@
 sudo: required
 service: docker
+install: travis_wait 30 mvn install
 before_insntall:
   - docker-compose up --build -d
   - docker login -u "$HEROKU_USERNAME" -p "$HEROKU_API_KEY" registry.heroku.com
